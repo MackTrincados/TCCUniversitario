@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:background="@drawable/logob">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.8"
+            android:background="@drawable/gradient" />
+
+        <RelativeLayout
+            android:layout_width="376dp"
+            android:layout_height="286dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="18.5dp"
+            android:layout_marginRight="18.5dp"
+            android:layout_marginBottom="0.0dp">
+
+
+            <EditText
+                android:id="@+id/txtNomeCadastro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13.5dp"
+                android:backgroundTint="@color/colorWhite"
+                android:fontFamily="sans-serif-light"
+                android:hint="Nome"
+                android:inputType="textPersonName"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="17sp" />
+
+            <EditText
+                android:id="@+id/txtSobrenomeCadastro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtNomeCadastro"
+                android:layout_marginTop="0.0dp"
+                android:layout_marginBottom="0.0dp"
+                android:backgroundTint="@color/colorWhite"
+                android:fontFamily="sans-serif-light"
+                android:hint="Sobrenome"
+                android:inputType="textPersonName"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="17sp" />
+
+            <EditText
+                android:id="@+id/txtEmailCadastro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtSobrenomeCadastro"
+                android:layout_marginTop="0.0dp"
+                android:layout_marginBottom="0.0dp"
+                android:backgroundTint="@color/colorWhite"
+                android:fontFamily="sans-serif-light"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="17sp" />
+
+            <EditText
+                android:id="@+id/txtSenhaCadastro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtEmailCadastro"
+                android:layout_marginTop="3.0dp"
+                android:layout_marginBottom="0.0dp"
+                android:backgroundTint="@color/colorWhite"
+                android:fontFamily="sans-serif-light"
+                android:hint="Senha"
+                android:inputType="textPassword"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="17sp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxCadastro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtSenhaCadastro"
+                android:layout_marginTop="14dp"
+                android:buttonTint="@color/colorWhite"
+                android:text="PCD?"
+                android:textColor="@color/colorWhite" />
+        </RelativeLayout>
+
+        <TextView
+            android:text="Crie a sua conta"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:fontFamily="sans-serif-light"
+            android:id="@+id/tituloCadastro"
+            android:layout_marginTop="28.5dp" />
+
+        <Button
+            android:id="@+id/btnCriarPerfilCadastro"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="0.0dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/botao_branco"
+            android:text="Criar Perfil"
+            android:textColor="@color/colorPrimary"
+            android:textSize="10sp" />
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

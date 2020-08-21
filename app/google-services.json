@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1040868451747",
+    "firebase_url": "https://fir-androidstudio-4a866.firebaseio.com",
+    "project_id": "fir-androidstudio-4a866",
+    "storage_bucket": "fir-androidstudio-4a866.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1040868451747:android:4ffa5fd3642bfa4450a616",
+        "android_client_info": {
+          "package_name": "com.example.appuniversitario"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1040868451747-7u7uhsd19jl69hup18rmi7od9691q5ap.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.appuniversitario",
+            "certificate_hash": "115625bf91b74286cfac62ca636403b8ae1f99f3"
+          }
+        },
+        {
+          "client_id": "1040868451747-hjgueac5c96i5anhl706h3kev90ib9ok.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwDcBEF-eygKb8GeCl9wdfZwi1a3drFTo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1040868451747-hjgueac5c96i5anhl706h3kev90ib9ok.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
