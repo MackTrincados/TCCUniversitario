@@ -3,14 +3,18 @@
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
-android:layout_height="match_parent">
+android:layout_height="wrap_content">
 
 <RelativeLayout
     android:id="@+id/gradientPerfil"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/gradient"
+    android:layout_height="275dp"
     android:paddingBottom="20dp">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="265dp"
+        android:background="@drawable/gradient" />
 
     <RelativeLayout
         android:id="@+id/imgUsuarioPerfil"
@@ -70,10 +74,11 @@ android:layout_height="match_parent">
     <ImageView
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="15dp"
+        android:layout_alignParentLeft="true"
         android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
         android:adjustViewBounds="true"
+        android:scaleType="centerInside"
         android:src="@drawable/calendario" />
 
 
@@ -197,7 +202,7 @@ android:layout_height="match_parent">
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-light"
                 android:text="Habilidade em ser o melhor do mundo"
-                android:textColor="#000000"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="18sp" />
 
             <View
@@ -227,7 +232,7 @@ android:layout_height="match_parent">
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-light"
                 android:text="adultoney@outlook.com"
-                android:textColor="#000000"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="18sp" />
 
             <View
@@ -257,7 +262,7 @@ android:layout_height="match_parent">
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-light"
                 android:text="(11) 97070-7070"
-                android:textColor="#000000"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="18sp" />
 
             <View
@@ -278,7 +283,7 @@ android:layout_height="match_parent">
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sexo"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/colorPrimary"
                 android:textSize="13sp" />
 
             <TextView
@@ -287,7 +292,7 @@ android:layout_height="match_parent">
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-light"
                 android:text="Masculino"
-                android:textColor="#000000"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="18sp" />
 
             <View

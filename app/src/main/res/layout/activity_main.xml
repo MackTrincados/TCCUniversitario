@@ -8,7 +8,7 @@
     tools:context=".MainActivity"
     android:minWidth="25px"
     android:minHeight="25px"
-    android:background="@drawable/logob">
+    android:background="@drawable/background">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -29,49 +29,57 @@
             android:layout_marginBottom="0.0dp">
 
             <EditText
-                android:id="@+id/txtEmailPerfil"
+                android:id="@+id/txtEmail"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="50.0dp"
+                android:background="@drawable/campos_de_texto"
                 android:backgroundTint="@color/colorWhite"
                 android:fontFamily="sans-serif-light"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
+                android:paddingLeft="10dp"
                 android:textColor="@color/colorWhite"
                 android:textColorHint="@color/colorWhite"
-                android:textSize="17sp"
-                android:layout_marginTop="30.0dp" />
+                android:textSize="17sp" />
+
             <EditText
                 android:id="@+id/txtSenha"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/txtEmailPerfil"
-                android:layout_marginTop="3.0dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/txtEmail"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="0.0dp"
+                android:background="@drawable/campos_de_texto"
                 android:backgroundTint="@color/colorWhite"
                 android:fontFamily="sans-serif-light"
                 android:hint="Senha"
                 android:inputType="textPassword"
+                android:paddingLeft="10dp"
                 android:textColor="@color/colorWhite"
                 android:textColorHint="@color/colorWhite"
-                android:textSize="17sp"
-                android:layout_marginBottom="0.0dp" />
+                android:textSize="17sp" />
         </RelativeLayout>
 
-        <!-- <ImageView
-             android:layout_width="60dp"
-             android:layout_height="60dp"
-             android:layout_centerHorizontal="true"
-             android:layout_marginTop="20dp"
-             android:src="@drawable/LogoApp" /> -->
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/circle_border2"
+            android:src="@drawable/logo" />
+
         <Button
             android:id="@+id/btnEsqSenha"
             android:layout_width="match_parent"
-            android:layout_height="26dp"
+            android:layout_height="28dp"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="10.0dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:textSize="9sp"
+            android:textSize="12sp"
             android:background="@android:color/transparent"
+            android:textAllCaps="false"
             android:text="Esqueceu a senha?"
             android:textColor="@color/colorWhite"
             android:layout_centerHorizontal="true"
@@ -79,28 +87,30 @@
         <Button
             android:id="@+id/btnCadastro"
             android:layout_width="match_parent"
-            android:layout_height="28dp"
+            android:layout_height="30dp"
             android:layout_above="@id/btnEsqSenha"
             android:layout_marginBottom="5.5dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:textSize="10sp"
+            android:textSize="14sp"
             android:background="@drawable/botao_branco"
+            android:textAllCaps="false"
             android:text="Cadastre-se"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/colorPrimaryDark"
             android:layout_centerHorizontal="true" />
         <Button
             android:id="@+id/btnEntrar"
             android:layout_width="match_parent"
-            android:layout_height="28dp"
+            android:layout_height="30dp"
             android:layout_above="@id/btnCadastro"
-            android:layout_marginBottom="3.0dp"
+            android:layout_marginBottom="1.0dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:textSize="10sp"
+            android:textSize="14sp"
             android:background="@drawable/botao_branco"
+            android:textAllCaps="false"
             android:text="Entrar"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/colorPrimaryDark"
             android:layout_centerHorizontal="true" />
 
     </RelativeLayout>

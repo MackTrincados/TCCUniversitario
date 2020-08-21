@@ -2,13 +2,21 @@ package com.example.appuniversitario;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -16,25 +24,80 @@ import java.util.UUID;
 
 public class CadastroActivity extends AppCompatActivity {
     private Button btnCriarPerfil;
+    private Button btnEnviar;
     private EditText txtEmail;
     private EditText txtSenha;
     private EditText txtNome;
     private EditText txtSobrenome;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
+    FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cadastro);
         btnCriarPerfil = (Button) findViewById(R.id.btnCriarPerfilCadastro);
-
+        btnEnviar = (Button) findViewById(R.id.btnEnviarCadastro);
         txtEmail = (EditText) findViewById(R.id.txtEmailCadastro);
         txtNome = (EditText) findViewById(R.id.txtNomeCadastro);
         txtSobrenome = (EditText) findViewById(R.id.txtSobrenomeCadastro);
         txtSenha = (EditText) findViewById(R.id.txtSenhaCadastro);
 
-        btnCriarPerfil.setOnClickListener(new View.OnClickListener() {
+        firebaseAuth = FirebaseAuth.getInstance();
+        if(firebaseAuth.getCurrentUser() != null){
+            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            finish();
+        }
+
+        btnEnviar.setOnClickListener(new View.OnClickListener() {
+            @Override
+                public void onClick (View view){
+                    String email = txtEmail.getText().toString().trim();
+                    String senha = txtSenha.getText().toString().trim();
+                    //String nome = txtNome.getText().toString().trim();
+                    //String sobrenome = txtSobrenome.getText().toString().trim();
+                if(TextUtils.isEmpty(email)){
+                    txtEmail.setError("Campo 'email' é requerido.");
+                    return;
+                }
+
+                if(TextUtils.isEmpty(senha)){
+                    txtSenha.setError("Campo 'senha' é requerido.");
+                    return;
+                }
+
+                if(senha.length() < 6){
+                    txtSenha.setError("A sua senha deve ser >= 6 Characteres");
+                    return;
+                }
+
+                firebaseAuth.createUserWithEmailAndPassword(email,senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            Toast.makeText(CadastroActivity.this, "Usuário Criado", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(),PerfilActivity.class));
+
+                        }else{
+                            Toast.makeText(CadastroActivity.this, "Erro" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+
+
+                    }
+                });
+            }
+        });
+
+        /*btnEnviar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            }
+        });
+         */
+
+  /*      btnCriarPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -53,19 +116,16 @@ public class CadastroActivity extends AppCompatActivity {
                 usuariosTeste.senha = txtSenha.getText().toString();
                 usuariosTeste.sobrenome = txtSobrenome.getText().toString();
 
-                 databaseReference.child("Usuarios").child(usuariosTeste.idUsuarios).setValue(usuariosTeste);
+                databaseReference.child("Usuarios").child(usuariosTeste.idUsuarios).setValue(usuariosTeste);
                 try {
                     Intent teaPeril = new Intent(CadastroActivity.this, PerfilActivity.class);
                     startActivity(teaPeril);
-                }
-                catch (Exception ex)
-                {
-                String erro = "-";
+                } catch (Exception ex) {
+                    String erro = "-";
                 }
                 finish();
             }
-        });
 
-
+        }); */
     }
 }
