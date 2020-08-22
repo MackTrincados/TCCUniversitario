@@ -1,8 +1,10 @@
 package com.example.appuniversitario;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -12,6 +14,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
@@ -23,7 +27,7 @@ import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
     private Button btnEntrar;
-    private Button btnEqueceuSenha;
+    private Button btnEsqueceuSenha;
     private Button btnCadastro;
     private EditText txtEmail;
     private EditText txtSenha;
@@ -50,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         //Button banCadastroMain = (Button) findViewById(R.id.btnCadastro);
         btnEntrar = (Button) findViewById(R.id.btnEntrar);
         btnCadastro = (Button) findViewById(R.id.btnCadastro);
-        btnEqueceuSenha = (Button) findViewById(R.id.btnEsqSenha);
+        btnEsqueceuSenha = (Button) findViewById(R.id.btnEsqSenha);
         txtEmail = (EditText) findViewById(R.id.txtEmail);
         txtSenha = (EditText) findViewById(R.id.txtSenha);
 
@@ -102,7 +106,6 @@ public class MainActivity extends AppCompatActivity {
 
          */
 
-
         btnCadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,10 +113,50 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnEqueceuSenha.setOnClickListener(new View.OnClickListener() {
+        /*btnEsqueceuSenha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),EsqueceuSenhaActivity.class));
+            }
+        });
+         */
+
+        btnEsqueceuSenha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final EditText resetMail = new EditText(v.getContext());
+                AlertDialog.Builder dialogoRedefineSenha = new AlertDialog.Builder(v.getContext());
+                dialogoRedefineSenha.setTitle("Redefinir Senha?");
+                dialogoRedefineSenha.setMessage("Entre Com o Seu Email Para Receber o Link");
+                dialogoRedefineSenha.setView(resetMail);
+
+                dialogoRedefineSenha.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        //extrair email e enviar o link de redefinição
+                        String mail = resetMail.getText().toString();
+                        firebaseAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(MainActivity.this, "Link De Redefinição Enviado Para o Seu Email!", Toast.LENGTH_SHORT).show();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(MainActivity.this, "Erro, Link De Redefinição Não Enviado!" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                });
+
+                dialogoRedefineSenha.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        //Fechar o dialógo
+                    }
+                });
+
+                dialogoRedefineSenha.create().show();
             }
         });
 
