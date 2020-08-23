@@ -24,12 +24,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.UUID;
 
 public class CadastroActivity extends AppCompatActivity {
-    private Button btnCriarPerfil;
-    private Button btnEnviar;
-    private EditText txtEmail;
-    private EditText txtSenha;
-    private EditText txtNome;
-    private EditText txtSobrenome;
+    private Button btnCriarPerfil, btnEnviar;
+    private EditText txtEmail, txtSenha, txtNome, txtSobrenome;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     FirebaseAuth firebaseAuth;
@@ -61,26 +57,26 @@ public class CadastroActivity extends AppCompatActivity {
                     String sobrenome = txtSobrenome.getText().toString().trim();
 
                 if(TextUtils.isEmpty(nome)){
-                    txtNome.setError("Campo 'nome' é requerido.");
+                    txtNome.setError("O campo 'nome' é requerido.");
                     return;
                 }
 
                 if(TextUtils.isEmpty(email)){
-                    txtEmail.setError("Campo 'email' é requerido.");
+                    txtEmail.setError("O campo 'email' é requerido.");
                     return;
                 }
                 if(TextUtils.isEmpty(sobrenome)){
-                    txtEmail.setError("Campo 'sobrenome' é requerido.");
+                    txtSobrenome.setError(" O campo 'sobrenome' é requerido.");
                     return;
                 }
 
                 if(TextUtils.isEmpty(senha)){
-                    txtSenha.setError("Campo 'senha' é requerido.");
+                    txtSenha.setError("O campo 'senha' é requerido.");
                     return;
                 }
 
                 if(senha.length() < 6){
-                    txtSenha.setError("A sua senha deve ser >= 6 Characteres");
+                    txtSenha.setError("A sua senha deve ter entre 6 ou mais characteres");
                     return;
                 }
 
@@ -90,7 +86,7 @@ public class CadastroActivity extends AppCompatActivity {
                         if(task.isSuccessful()){
                            // FirebaseUser user = firebaseAuth.getCurrentUser();
                             //criarUsuarioFirebase(user);
-                            Toast.makeText(CadastroActivity.this, "Usuário Criado", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CadastroActivity.this, "Usuário criado", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(),PerfilActivity.class));
 
                         }else{

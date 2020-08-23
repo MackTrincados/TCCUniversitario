@@ -27,11 +27,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
-    private Button btnEntrar;
-    private Button btnEsqueceuSenha;
-    private Button btnCadastro;
-    private EditText txtEmail;
-    private EditText txtSenha;
+    private Button btnEntrar, btnEsqueceuSenha, btnCadastro;
+    private EditText txtEmail, txtSenha;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     FirebaseAuth firebaseAuth;
@@ -67,17 +64,17 @@ public class MainActivity extends AppCompatActivity {
                 String senha = txtSenha.getText().toString().trim();
 
                 if(TextUtils.isEmpty(email)){
-                    txtEmail.setError("Campo 'email' é requerido.");
+                    txtEmail.setError("O campo 'email' é requerido.");
                     return;
                 }
 
                 if(TextUtils.isEmpty(senha)){
-                    txtSenha.setError("Campo 'senha' é requerido.");
+                    txtSenha.setError("O campo 'senha' é requerido.");
                     return;
                 }
 
                 if(senha.length() < 6){
-                    txtSenha.setError("A sua senha deve ser >= 6 Characteres");
+                    txtSenha.setError("A sua senha deve ter entre 6 ou mais characteres");
                     return;
                 }
 
@@ -87,11 +84,11 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onComplete(@NonNull Task<AuthResult> task) {
             if (task.isSuccessful()) {
-                Toast.makeText(MainActivity.this, "Login Realizado com Sucesso!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Login realizado com sucesso!", Toast.LENGTH_SHORT).show();
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 startActivity(new Intent(getApplicationContext(), PerfilActivity.class));
             } else {
-                Toast.makeText(MainActivity.this, "Erro" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Erro!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
     });
@@ -134,8 +131,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 final EditText resetMail = new EditText(v.getContext());
                 AlertDialog.Builder dialogoRedefineSenha = new AlertDialog.Builder(v.getContext());
-                dialogoRedefineSenha.setTitle("Redefinir Senha?");
-                dialogoRedefineSenha.setMessage("Entre Com o Seu Email Para Receber o Link");
+                dialogoRedefineSenha.setTitle("Redefinir senha?");
+                dialogoRedefineSenha.setMessage("Digite o seu email para receber o link");
                 dialogoRedefineSenha.setView(resetMail);
 
                 dialogoRedefineSenha.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
@@ -146,12 +143,12 @@ public class MainActivity extends AppCompatActivity {
                         firebaseAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                Toast.makeText(MainActivity.this, "Link De Redefinição Enviado Para o Seu Email!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, "O link de redefinição de senha foi enviado para o seu emai!", Toast.LENGTH_SHORT).show();
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(MainActivity.this, "Erro, Link De Redefinição Não Enviado!" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, "Erro, link de redefinição não enviado!" + e.getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         });
                     }
