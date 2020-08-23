@@ -20,6 +20,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         FirebaseApp.initializeApp(MainActivity.this);
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference();
+        firebaseAuth = FirebaseAuth.getInstance();
         //Usuarios usuariosTeste = new Usuarios();
         //usuariosTeste.idUsuarios = UUID.randomUUID().toString();
         //usuariosTeste.nome = "Neymar";
@@ -80,18 +82,24 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 //Autenticação do usuário
-
-                firebaseAuth.signInWithEmailAndPassword(email,senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(MainActivity.this, "Login Realizado com Sucesso!", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),PerfilActivity.class));
-                        }else {
-                            Toast.makeText(MainActivity.this, "Erro" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
+        try {
+    firebaseAuth.signInWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        @Override
+        public void onComplete(@NonNull Task<AuthResult> task) {
+            if (task.isSuccessful()) {
+                Toast.makeText(MainActivity.this, "Login Realizado com Sucesso!", Toast.LENGTH_SHORT).show();
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                startActivity(new Intent(getApplicationContext(), PerfilActivity.class));
+            } else {
+                Toast.makeText(MainActivity.this, "Erro" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        }
+    });
+        }
+        catch (Exception ex)
+            {
+                String a = ex.toString();
+            }
             }
 
         });
