@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -18,8 +19,12 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.UUID;
 
@@ -40,6 +45,10 @@ public class CadastroActivity extends AppCompatActivity {
         txtNome = (EditText) findViewById(R.id.txtNomeCadastro);
         txtSobrenome = (EditText) findViewById(R.id.txtSobrenomeCadastro);
         txtSenha = (EditText) findViewById(R.id.txtSenhaCadastro);
+        txtEmail.setText("email@email.com");
+        txtNome.setText("nome");
+        txtSobrenome.setText("sobre");
+        txtSenha .setText("etre45");
 
 
        // if (firebaseAuth.getCurrentUser() != null) {
@@ -47,6 +56,12 @@ public class CadastroActivity extends AppCompatActivity {
           //  finish();
        // }
         firebaseAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();
+
+
+
+
 
         btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,8 +99,8 @@ public class CadastroActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                           // FirebaseUser user = firebaseAuth.getCurrentUser();
-                            //criarUsuarioFirebase(user);
+                            FirebaseUser user = firebaseAuth.getCurrentUser();
+                            criarUsuarioFirebase(user);
                             Toast.makeText(CadastroActivity.this, "Usuário criado", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(),PerfilActivity.class));
 
@@ -143,12 +158,21 @@ public class CadastroActivity extends AppCompatActivity {
     private void criarUsuarioFirebase(FirebaseUser user)
     {
         Usuarios usuariosTeste = new Usuarios();
-        usuariosTeste.idUsuarios = user.getUid();
+        usuariosTeste.idUsuarios = firebaseAuth.getUid();
         usuariosTeste.nome = txtNome.getText().toString();
         usuariosTeste.email = txtEmail.getText().toString();
         usuariosTeste.senha = txtSenha.getText().toString();
         usuariosTeste.sobrenome = txtSobrenome.getText().toString();
 
-        databaseReference.child("Usuarios").child(usuariosTeste.idUsuarios).setValue(usuariosTeste);
+        try {
+            databaseReference.child("Usuarios").child(usuariosTeste.idUsuarios).setValue(usuariosTeste);
+
+        }
+        catch (Exception ex)
+        {
+            String a = ex.toString();
+        }
+
     }
+
 }

@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
             if (task.isSuccessful()) {
                 Toast.makeText(MainActivity.this, "Login realizado com sucesso!", Toast.LENGTH_SHORT).show();
                 FirebaseUser user = firebaseAuth.getCurrentUser();
+
                 startActivity(new Intent(getApplicationContext(), PerfilActivity.class));
             } else {
                 Toast.makeText(MainActivity.this, "Erro!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();

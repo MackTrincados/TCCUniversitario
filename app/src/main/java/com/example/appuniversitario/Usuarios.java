@@ -6,6 +6,11 @@ public class Usuarios {
     public String email;
     public String senha;
     public String sobrenome;
+    public String sobremim;
+    public String telefone;
+    public String sexo;
+    public int semestre;
+
     public  Usuarios(){}
     public  Usuarios(String nome,String email,String sobrenome,String senha)
     {
