@@ -29,13 +29,8 @@ import java.util.ListIterator;
 public class PerfilActivity extends AppCompatActivity {
 
 
-    private TextView txtNome;
-    private TextView txtSobre;
-    private TextView txtEmail;
-    private TextView txtCelular;
-    private TextView txtSemestre;
-    private TextView txtSexo;
-    private Button btnSalvarPerfil;
+    private TextView txtNome, txtSobre, txtEmail, txtCelular, txtSemestre, txtSexo;
+    private Button btnSalvarPerfil, btnHabilidades;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     FirebaseAuth firebaseAuth;
@@ -63,9 +58,11 @@ public class PerfilActivity extends AppCompatActivity {
         txtSexo = (TextView) findViewById(R.id.txtSexoPerfil);
         txtSemestre = (TextView) findViewById(R.id.txtSemestrePerfil);
         btnSalvarPerfil = (Button) findViewById(R.id.btnSalvarPerfil);
+        btnHabilidades = (Button) findViewById(R.id.btnHabilidades);
         btnSalvarPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Usuarios usuariosTeste = new Usuarios();
                 usuariosTeste.nome = txtNome.getText().toString();
                 usuariosTeste.email = txtEmail.getText().toString();
@@ -79,10 +76,18 @@ public class PerfilActivity extends AppCompatActivity {
                 databaseReference.child("Usuarios").child(IdPerfil).setValue(usuariosTeste);
             }
         });
+
+        btnHabilidades.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),HabilidadesActivity.class));
+            }
+        });
+
        // txtUniversidade = (TextView) findViewById(R.id.txt);
     }
 
-    private  void EventoDataBase()
+    private void EventoDataBase()
     {
 
         databaseReference.child("Usuarios").child(IdPerfil).addValueEventListener(new ValueEventListener() {
@@ -99,6 +104,5 @@ public class PerfilActivity extends AppCompatActivity {
 
             }
         });
-
     }
 }
