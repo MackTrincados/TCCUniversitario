@@ -21,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.security.PublicKey;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -29,14 +30,16 @@ import java.util.ListIterator;
 public class PerfilActivity extends AppCompatActivity {
 
 
-    private TextView txtNome, txtSobre, txtEmail, txtCelular, txtSemestre, txtSexo;
+    private EditText  txtSobre, txtEmail, txtCelular, txtSemestre, txtSexo;
+    private TextView txtCurso;
+    private EditText  txtNome;
     private Button btnSalvarPerfil, btnHabilidades;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     FirebaseAuth firebaseAuth;
     String IdPerfil = "";
-
-
+    public String a = "";
+    public Usuarios usu= new Usuarios();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,15 +51,17 @@ public class PerfilActivity extends AppCompatActivity {
         FirebaseUser user = firebaseAuth.getCurrentUser();
         IdPerfil = firebaseAuth.getUid();
 
+
         int c = 1;
        EventoDataBase();
 
-        txtNome = (TextView) findViewById(R.id.txtNomeUsuarioPerfil);
-        txtSobre = (TextView) findViewById(R.id.txtSobreMimPerfil);
-        txtEmail = (TextView) findViewById(R.id.txtEmailPerfil);
-        txtCelular = (TextView) findViewById(R.id.txtCelularPerfil);
-        txtSexo = (TextView) findViewById(R.id.txtSexoPerfil);
-        txtSemestre = (TextView) findViewById(R.id.txtSemestrePerfil);
+        txtNome = (EditText) findViewById(R.id.txtNomeUsuarioPerfil);
+        txtSobre = (EditText) findViewById(R.id.txtSobreMimPerfil);
+        txtEmail = (EditText) findViewById(R.id.txtEmailPerfil);
+        txtCelular = (EditText) findViewById(R.id.txtCelularPerfil);
+        txtSexo = (EditText) findViewById(R.id.txtSexoPerfil);
+        txtCurso = (TextView) findViewById(R.id.txtCursoPerfil);
+        txtSemestre = (EditText) findViewById(R.id.txtSemestrePerfil);
         btnSalvarPerfil = (Button) findViewById(R.id.btnSalvarPerfil);
         btnHabilidades = (Button) findViewById(R.id.btnHabilidades);
         btnSalvarPerfil.setOnClickListener(new View.OnClickListener() {
@@ -73,7 +78,13 @@ public class PerfilActivity extends AppCompatActivity {
                 usuariosTeste.sexo = txtSexo.getText().toString();
                 usuariosTeste.telefone = txtCelular.getText().toString();
 
-                databaseReference.child("Usuarios").child(IdPerfil).setValue(usuariosTeste);
+                usu.sobremim = txtSobre.getText().toString();
+
+                usu.semestre = semestreInt;
+                usu.sexo = txtSexo.getText().toString();
+                usu.telefone = txtCelular.getText().toString();
+                //databaseReference.child("Usuarios").child(IdPerfil).setValue(usuariosTeste);
+                databaseReference.child("Usuarios").child("teste").setValue(usu);
             }
         });
 
@@ -94,6 +105,7 @@ public class PerfilActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Usuarios usuarios = snapshot.getValue(Usuarios.class);
+                usu = snapshot.getValue(Usuarios.class);
                 txtNome.setText(usuarios.nome);
                 txtEmail.setText(usuarios.email);
                 //txtSobre.setText(usuarios.sobrenome);
