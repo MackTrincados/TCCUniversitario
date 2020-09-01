@@ -15,51 +15,68 @@
             android:layout_height="match_parent"
             android:alpha="0.8"
             android:background="@drawable/gradient" />
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="217.0dp"
+            android:layout_height="250.0dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="18.5dp"
             android:layout_marginRight="18.5dp"
             android:layout_marginBottom="0.0dp">
 
             <Spinner
-                android:id="@+id/spinner1"
+                android:id="@+id/spinnerC"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:drawable/btn_dropdown"
                 android:spinnerMode="dropdown"/>
 
             <Spinner
-                android:id="@+id/spinner2"
+                android:id="@+id/spinnerS"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/spinner1"
+                android:layout_below="@id/spinnerC"
                 android:background="@android:drawable/btn_dropdown"
                 android:spinnerMode="dropdown"/>
 
             <Spinner
-                android:id="@+id/spinner3"
+                android:id="@+id/spinnerD"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/spinner2"
+                android:layout_below="@id/spinnerS"
+                android:background="@android:drawable/btn_dropdown"
+                android:spinnerMode="dropdown" />
+
+            <Spinner
+                android:id="@+id/spinnerR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/spinnerD"
+                android:background="@android:drawable/btn_dropdown"
+                android:spinnerMode="dropdown" />
+
+            <Spinner
+                android:id="@+id/spinnerE"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/spinnerR"
                 android:background="@android:drawable/btn_dropdown"
                 android:spinnerMode="dropdown" />
 
         </RelativeLayout>
 
         <TextView
-            android:text="Minhas Habilidades"
+            android:text="Busca/Filtro"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorWhite"
             android:fontFamily="sans-serif-light"
-            android:id="@+id/tituloHabilidades"
+            android:id="@+id/tituloBusca"
             android:layout_marginTop="28.5dp" />
         <Button
-            android:id="@+id/btnEnviarHabilidades"
+            android:id="@+id/btnEnviarBusca"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_alignParentBottom="true"
