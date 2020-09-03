@@ -1,28 +1,41 @@
 package com.example.appuniversitario;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.List;
+import java.util.Random;
+import java.util.UUID;
 
 public class HabilidadesActivity extends AppCompatActivity {
-    private Button btnEnviar;
 
-
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
+    FirebaseAuth firebaseAuth;
+    //public List<Habilidades> lstHabilidades = new List<Habilidades>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.habilidades);
 
-        btnEnviar = (Button) findViewById(R.id.btnEnviarHabilidades);
-
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();
         //Tipo 1
         Spinner staticSpinner = (Spinner) findViewById(R.id.spinner1);
         ArrayAdapter<CharSequence> staticAdapter = ArrayAdapter
@@ -56,10 +69,43 @@ public class HabilidadesActivity extends AppCompatActivity {
             }
         });
 
-        btnEnviar.setOnClickListener(new View.OnClickListener() {
+        AdicionarHabilidades();
+       // CarregarHabilidades();
+    }
+    public  void AdicionarHabilidades()
+    {
+
+        Habilidades habilidades = new Habilidades();
+
+        habilidades.idHabilidades = UUID.randomUUID().toString();
+        habilidades.descricao = "habilidade 1";
+
+
+        try {
+            databaseReference.child("Habilidades").child(habilidades.idHabilidades).setValue(habilidades);
+
+        }
+        catch (Exception ex)
+        {
+            String a = ex.toString();
+        }
+    }
+
+    public  void CarregarHabilidades()
+    {
+        databaseReference.child("Habilidades").addValueEventListener(new ValueEventListener() {
             @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),BuscaActivity.class));
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Usuarios usuarios = snapshot.getValue(Usuarios.class);
+               // usu = snapshot.getValue(Usuarios.class);
+                //txtNome.setText(usuarios.nome);
+                //txtEmail.setText(usuarios.email);
+                //txtSobre.setText(usuarios.sobrenome);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
     }
