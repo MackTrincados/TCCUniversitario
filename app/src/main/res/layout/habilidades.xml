@@ -58,6 +58,7 @@
             android:fontFamily="sans-serif-light"
             android:id="@+id/tituloHabilidades"
             android:layout_marginTop="28.5dp" />
+
         <Button
             android:id="@+id/btnEnviarHabilidades"
             android:layout_width="match_parent"
@@ -68,7 +69,7 @@
             android:layout_marginRight="20dp"
             android:textSize="14sp"
             android:background="@drawable/botao_branco"
-            android:text="Enviar"
+            android:text="TESTE DA TELA DE BUSCA"
             android:textAllCaps="false"
             android:textColor="@color/colorPrimaryDark"
             android:layout_centerHorizontal="true"

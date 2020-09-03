@@ -2,19 +2,26 @@ package com.example.appuniversitario;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
+
 public class HabilidadesActivity extends AppCompatActivity {
+    private Button btnEnviar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.habilidades);
+
+        btnEnviar = (Button) findViewById(R.id.btnEnviarHabilidades);
 
         //Tipo 1
         Spinner staticSpinner = (Spinner) findViewById(R.id.spinner1);
@@ -46,6 +53,13 @@ public class HabilidadesActivity extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 // TODO Auto-generated method stub
+            }
+        });
+
+        btnEnviar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),BuscaActivity.class));
             }
         });
     }

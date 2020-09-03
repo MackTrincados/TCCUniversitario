@@ -10,6 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -55,26 +56,26 @@
                 android:background="@android:drawable/btn_dropdown"
                 android:spinnerMode="dropdown" />
 
-            <Spinner
-                android:id="@+id/spinnerE"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/spinnerR"
-                android:background="@android:drawable/btn_dropdown"
-                android:spinnerMode="dropdown" />
 
         </RelativeLayout>
 
-        <TextView
+        <SearchView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="22dp"
+            android:background="@color/colorWhite"/>
+
+       <!-- <TextView
             android:text="Busca/Filtro"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorWhite"
+            android:textColor="@color/colorPrimaryDark"
             android:fontFamily="sans-serif-light"
             android:id="@+id/tituloBusca"
-            android:layout_marginTop="28.5dp" />
+            android:layout_marginTop="28.5dp" /> -->
         <Button
             android:id="@+id/btnEnviarBusca"
             android:layout_width="match_parent"
@@ -85,7 +86,7 @@
             android:layout_marginRight="20dp"
             android:textSize="14sp"
             android:background="@drawable/botao_branco"
-            android:text="Enviar"
+            android:text="Buscar"
             android:textAllCaps="false"
             android:textColor="@color/colorPrimaryDark"
             android:layout_centerHorizontal="true"
