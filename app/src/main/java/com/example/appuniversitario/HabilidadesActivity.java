@@ -18,6 +18,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.UUID;
@@ -27,7 +28,10 @@ public class HabilidadesActivity extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     FirebaseAuth firebaseAuth;
-    //public List<Habilidades> lstHabilidades = new List<Habilidades>();
+    public List<Habilidades> lstHabilidade = new ArrayList<>();
+
+    private Spinner dropdown3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +41,7 @@ public class HabilidadesActivity extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference();
         //Tipo 1
+
         Spinner staticSpinner = (Spinner) findViewById(R.id.spinner1);
         ArrayAdapter<CharSequence> staticAdapter = ArrayAdapter
                 .createFromResource(this, R.array.skill_array,
@@ -46,7 +51,45 @@ public class HabilidadesActivity extends AppCompatActivity {
         staticSpinner.setAdapter(staticAdapter);
 
 
+
+//create a list of items for the spinner.
+
+//create an adapter to describe how the items are displayed, adapters are used in several places in android.
+//There are multiple variations of this, but this is the basic variant.
+
+
+
+
+
+        dropdown3= (Spinner) findViewById(R.id.spinner3);
+        ArrayAdapter<Habilidades> adapter3 = new ArrayAdapter<Habilidades>
+                 (this, android.R.layout.simple_spinner_item, lstHabilidade);
+       adapter3.setDropDownViewResource(android.R.layout.simple_spinner_item);
+//set the spinners adapter to the previously created one.
+        dropdown3.setAdapter(adapter3);
+
+
+        dropdown3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                Habilidades habilidades = (Habilidades) adapterView.getSelectedItem();
+                String ae = habilidades.descricao;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
+
+
+
+
         //Tipo 2
+
+
         Spinner dynamicSpinner = (Spinner) findViewById(R.id.spinner2);
 
         String[] items = new String[] { "HTML", "CSS", "JavaScript" };
@@ -69,8 +112,8 @@ public class HabilidadesActivity extends AppCompatActivity {
             }
         });
 
-        AdicionarHabilidades();
-       // CarregarHabilidades();
+       // AdicionarHabilidades();
+        CarregarHabilidades();
     }
     public  void AdicionarHabilidades()
     {
@@ -78,7 +121,7 @@ public class HabilidadesActivity extends AppCompatActivity {
         Habilidades habilidades = new Habilidades();
 
         habilidades.idHabilidades = UUID.randomUUID().toString();
-        habilidades.descricao = "habilidade 1";
+        habilidades.descricao = "habilidade 2";
 
 
         try {
@@ -96,7 +139,27 @@ public class HabilidadesActivity extends AppCompatActivity {
         databaseReference.child("Habilidades").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Usuarios usuarios = snapshot.getValue(Usuarios.class);
+
+
+                for (DataSnapshot areaSnapshot : snapshot.getChildren()) {
+                    String idHabilidade = areaSnapshot.getKey();
+                    databaseReference.child("Habilidades").child(idHabilidade).addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            Habilidades habilidades = snapshot.getValue(Habilidades.class);
+                            lstHabilidade.add(habilidades);
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+          //          Habilidades r = (Habilidades) areaSnapshot.getValue();
+
+                }
+
+
                // usu = snapshot.getValue(Usuarios.class);
                 //txtNome.setText(usuarios.nome);
                 //txtEmail.setText(usuarios.email);
@@ -108,5 +171,11 @@ public class HabilidadesActivity extends AppCompatActivity {
 
             }
         });
+
+
+    }
+    public void getSelectedUser(View v)
+    {
+        Habilidades habilidades = (Habilidades) dropdown3.getSelectedItem();
     }
 }

@@ -11,5 +11,8 @@ public class Habilidades {
 
     }
 
-
+    @Override
+    public String toString() {
+        return descricao;
+    }
 }
