@@ -1,4 +1,4 @@
-package com.example.appuniversitario;
+package com.example.appuniversitario.Adapters;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.appuniversitario.StoryItem;
+import com.example.appuniversitario.Models.StoryItem;
 import com.example.appuniversitario.R;
 
 import java.util.List;
@@ -41,7 +41,7 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        final int color = Color.parseColor("#F076B1");
+        final int color = Color.parseColor("grey");
 
         final StoryItem storyItem = storyItems.get(position);
 
@@ -50,9 +50,12 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.ViewHolder> 
 
         boolean isStory = storyItem.isStory();
 
-        if(isStory== true){
+        if(isStory == true){
             holder.iv_story.setBorderColor(color);
-            holder.iv_story.setBorderWidth(6);
+            holder.iv_story.setBorderWidth(4);
+        } else{
+            holder.iv_story.setBorderColor(color);
+            holder.iv_story.setBorderWidth(4);
         }
     }
 

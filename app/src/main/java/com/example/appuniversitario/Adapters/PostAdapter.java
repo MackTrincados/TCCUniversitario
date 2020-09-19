@@ -1,4 +1,4 @@
-package com.example.appuniversitario;
+package com.example.appuniversitario.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,11 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.appuniversitario.PostItem;
-import com.example.appuniversitario.StoryItem;
+import com.example.appuniversitario.Models.PostItem;
 import com.example.appuniversitario.R;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 

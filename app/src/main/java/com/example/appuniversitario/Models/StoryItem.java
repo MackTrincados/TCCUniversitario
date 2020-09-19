@@ -1,4 +1,4 @@
-package com.example.appuniversitario;
+package com.example.appuniversitario.Models;
 
 public class StoryItem {
 
