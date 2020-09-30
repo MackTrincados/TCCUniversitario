@@ -8,7 +8,7 @@
     tools:context=".MainActivity"
     android:minWidth="25px"
     android:minHeight="25px"
-    android:background="@drawable/background">
+    android:background="@drawable/background1">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -61,13 +61,13 @@
                 android:textSize="17sp" />
         </RelativeLayout>
 
-        <ImageView
+        <!--<ImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:background="@drawable/circle_border2"
-            android:src="@drawable/logo" />
+            android:src="@drawable/logo" /> -->
 
         <Button
             android:id="@+id/btnEsqSenha"

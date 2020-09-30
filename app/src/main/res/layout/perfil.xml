@@ -18,6 +18,8 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="265dp"
+            android:layout_above="@+id/nomeUniversidade"
+            android:layout_marginBottom="-18dp"
             android:background="@drawable/gradient" />
 
         <RelativeLayout
@@ -48,7 +50,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15sp"
             android:fontFamily="sans-serif-light"
-            android:text="Menino Ney"
+            android:text="Nome Aluno"
             android:textColor="@color/colorWhite"
             android:textSize="32sp" />
 
@@ -104,10 +106,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/gradient"
             android:gravity="center"
-            android:paddingBottom="5dp"
-            android:paddingTop="5dp">
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -123,12 +125,12 @@
                     android:textColor="@color/colorWhite"
                     android:textSize="25sp" />
 
-                <TextView
+                <EditText
                     android:id="@+id/txtCursoPerfil"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="Deuses do futebol"
+                    android:text="Sistemas de informação"
                     android:textAllCaps="true"
                     android:textColor="@color/colorWhite"
                     android:textSize="13sp" />
@@ -139,13 +141,13 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/gradient"
             android:gravity="center"
-            android:paddingBottom="5dp"
-            android:paddingTop="5dp">
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -166,10 +168,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="8"
+                    android:text="Oitavo"
                     android:textAllCaps="true"
                     android:textColor="@color/colorWhite"
                     android:textSize="13sp" />
+
+
 
             </LinearLayout>
 
@@ -204,7 +208,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Sobre mim"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="13sp" />
 
                 <EditText
@@ -212,7 +216,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="Habilidade em ser o melhor do mundo"
+                    android:text="Texto sobre mim"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="18sp" />
 
@@ -234,7 +238,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Email"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="13sp" />
 
                 <EditText
@@ -242,7 +246,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="adultoney@outlook.com"
+                    android:text="alunomack@outlook.com"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="18sp" />
 
@@ -264,7 +268,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Celular"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="13sp" />
 
                 <EditText
@@ -294,7 +298,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Sexo"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="13sp" />
 
                 <EditText

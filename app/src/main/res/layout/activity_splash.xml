@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/logo"
     tools:context=".Splash">
 
     <RelativeLayout
@@ -17,13 +17,13 @@
             android:alpha="0.8"
             android:background="@drawable/gradient" />
 
-        <ImageView
+        <!--<ImageView
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/circle_border2"
-            android:src="@drawable/logo" />
+            android:src="@drawable/logo" /> -->
 
     </RelativeLayout>
 
@@ -31,6 +31,7 @@
         android:id="@+id/txtNomeAppSplash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="550dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
@@ -44,7 +45,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <ProgressBar
+    <!--<ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
@@ -57,6 +58,6 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNomeAppSplash"
-        app:layout_constraintVertical_bias="0.397" />
+        app:layout_constraintVertical_bias="0.397" /> -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

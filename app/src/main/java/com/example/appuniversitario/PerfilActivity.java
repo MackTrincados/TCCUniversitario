@@ -60,7 +60,7 @@ public class PerfilActivity extends AppCompatActivity {
         txtEmail = (EditText) findViewById(R.id.txtEmailPerfil);
         txtCelular = (EditText) findViewById(R.id.txtCelularPerfil);
         txtSexo = (EditText) findViewById(R.id.txtSexoPerfil);
-        txtCurso = (TextView) findViewById(R.id.txtCursoPerfil);
+        txtCurso = (EditText) findViewById(R.id.txtCursoPerfil);
         txtSemestre = (EditText) findViewById(R.id.txtSemestrePerfil);
         btnSalvarPerfil = (Button) findViewById(R.id.btnSalvarPerfil);
         btnHabilidades = (Button) findViewById(R.id.btnHabilidades);
@@ -91,7 +91,7 @@ public class PerfilActivity extends AppCompatActivity {
         btnHabilidades.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),FeedActivity.class));
+                startActivity(new Intent(getApplicationContext(),HabilidadesActivity.class));
             }
         });
 

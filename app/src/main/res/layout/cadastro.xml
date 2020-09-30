@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:minWidth="25px"
     android:minHeight="25px"
-    android:background="@drawable/background">
+    android:background="@drawable/background1">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -134,18 +134,16 @@
             android:id="@+id/btnEnviarCadastro"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:layout_above="@id/btnEnviarCadastro"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
+            android:layout_above="@id/btnCriarPerfilCadastro"
+            android:layout_marginBottom="1.0dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="0.0dp"
             android:layout_marginRight="20dp"
-            android:layout_marginBottom="84dp"
+            android:textSize="14sp"
             android:background="@drawable/botao_branco"
-            android:text="Enviar"
             android:textAllCaps="false"
+            android:text="Entrar"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="14sp" />
+            android:layout_centerHorizontal="true" />
 
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

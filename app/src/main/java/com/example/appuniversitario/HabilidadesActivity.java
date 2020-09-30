@@ -59,9 +59,9 @@ public class HabilidadesActivity extends AppCompatActivity {
 
 
 
+//Dar uma olhada !!
 
-
-        dropdown3= (Spinner) findViewById(R.id.spinner3);
+        dropdown3 = (Spinner) findViewById(R.id.spinner3);
         ArrayAdapter<Habilidades> adapter3 = new ArrayAdapter<Habilidades>
                  (this, android.R.layout.simple_spinner_item, lstHabilidade);
        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_item);
