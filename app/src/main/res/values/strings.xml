@@ -8,6 +8,29 @@
         <item>Aws</item>
         <item>Cloud Computing</item>
     </string-array>
+
+    <string-array name="alunos">
+        <item>Marcos Marcos Marcos Marcos</item>
+        <item>Paulo Paulo Paulo</item>
+        <item>victor victor victor</item>
+        <item>joao joao joao</item>
+        <item>pedro pedro pedro</item>
+    </string-array>
+
+    <string-array name="descricao">
+        <item>descri 1111111111111111111 </item>
+        <item>descri 2222222222222222222222</item>
+        <item>3333333333333333333333</item>
+        <item>4444444444444444444444444</item>
+        <item>555555555555555555555</item>
+    </string-array>
+    <string-array name="Materias2">
+        <item>Calculo </item>
+        <item>Calculo 2</item>
+        <item>Calculo 3</item>
+        <item>Calculo 4</item>
+        <item>Calculo 5</item>
+    </string-array>
 </resources>
 
 

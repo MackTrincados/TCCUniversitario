@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.appuniversitario.Models.FeedActivityOfi;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
@@ -91,7 +92,7 @@ public class PerfilActivity extends AppCompatActivity {
         btnHabilidades.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),HabilidadesActivity.class));
+                startActivity(new Intent(getApplicationContext(), FeedActivityOfi.class));
             }
         });
 
