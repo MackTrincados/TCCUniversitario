@@ -1,4 +1,4 @@
-package com.example.appuniversitario.Adapters;
+/*package com.example.appuniversitario.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -61,21 +61,13 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>  {
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            iv_post = (ImageView) itemView.findViewById(R.id.iv_card_post);
-            iv_profile= (CircleImageView) itemView.findViewById(R.id.iv_card_profile);
-            tv_uname = (TextView) itemView.findViewById(R.id.textView_card_username);
-            tv_time = (TextView) itemView.findViewById(R.id.textView_card_time);
+            iv_post = (ImageView) itemView.findViewById(R.id.imageViewFeed);
+            tv_uname = (TextView) itemView.findViewById(R.id.txtNomesFeed);
+            tv_time = (TextView) itemView.findViewById(R.id.txtMaterias2);
 
         }
     }
-
-
-
-
-
-
-
-
-
 }
+
+ */
 

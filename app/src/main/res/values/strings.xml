@@ -10,19 +10,19 @@
     </string-array>
 
     <string-array name="alunos">
-        <item>Marcos Marcos Marcos Marcos</item>
-        <item>Paulo Paulo Paulo</item>
-        <item>victor victor victor</item>
-        <item>joao joao joao</item>
-        <item>pedro pedro pedro</item>
+        <item>Marcos Augusto</item>
+        <item>Paulo Guedes</item>
+        <item>Victor Apolinario</item>
+        <item>Leonardo Baier</item>
+        <item>Leitinho da mamãe</item>
     </string-array>
 
     <string-array name="descricao">
-        <item>descri 1111111111111111111 </item>
-        <item>descri 2222222222222222222222</item>
-        <item>3333333333333333333333</item>
-        <item>4444444444444444444444444</item>
-        <item>555555555555555555555</item>
+        <item></item>
+        <item>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</item>
+        <item>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</item>
+        <item>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</item>
+        <item>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</item>
     </string-array>
     <string-array name="Materias2">
         <item>Calculo </item>

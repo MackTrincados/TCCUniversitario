@@ -19,7 +19,7 @@ public class FeedActivityOfi extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_feed);
+        setContentView(R.layout.feed);
         recyclerView = findViewById(R.id.recyclerView);
         s1 = getResources().getStringArray(R.array.alunos);
         s2 = getResources().getStringArray(R.array.descricao);

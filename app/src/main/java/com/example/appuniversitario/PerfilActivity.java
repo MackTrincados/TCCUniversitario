@@ -40,11 +40,11 @@ public class PerfilActivity extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     String IdPerfil = "";
     public String a = "";
-    public Usuarios usu= new Usuarios();
+    public Usuarios usu = new Usuarios();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.perfil);
+        setContentView(R.layout.perfil1);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference();
@@ -66,6 +66,7 @@ public class PerfilActivity extends AppCompatActivity {
         btnSalvarPerfil = (Button) findViewById(R.id.btnSalvarPerfil);
         btnHabilidades = (Button) findViewById(R.id.btnHabilidades);
         btnSalvarPerfil.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
 

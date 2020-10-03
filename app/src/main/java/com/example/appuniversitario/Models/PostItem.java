@@ -1,14 +1,14 @@
-package com.example.appuniversitario.Models;
+/*package com.example.appuniversitario.Models;
 
 public class PostItem {
 
-    int img_post;
+    String img_post;
     int img_user;
     String txt_username;
     String txt_time;
 
 
-    public PostItem(int img_post, int img_user, String txt_username, String txt_time) {
+    public PostItem(String img_post, int img_user, String txt_username, String txt_time) {
         this.img_post = img_post;
         this.img_user = img_user;
         this.txt_username = txt_username;
@@ -16,11 +16,11 @@ public class PostItem {
     }
 
 
-    public int getImg_post() {
+    public String getImg_post() {
         return img_post;
     }
 
-    public void setImg_post(int img_post) {
+    public void setImg_post(String img_post) {
         this.img_post = img_post;
     }
 
@@ -48,3 +48,4 @@ public class PostItem {
         this.txt_time = txt_time;
     }
 }
+ */

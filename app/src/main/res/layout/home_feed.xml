@@ -56,8 +56,8 @@
                 android:orientation="horizontal"
                 app:layout_constraintGuide_percent="0.75" />
 
-            <ImageView
-                android:id="@+id/iv_card_post"
+            <TextView
+                android:id="@+id/txtDescricaoFeed"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="fitXY"
@@ -82,7 +82,7 @@
                 app:layout_constraintGuide_percent="0.80" />
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/iv_card_profile"
+                android:id="@+id/imageViewFeed"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="16dp"
@@ -94,14 +94,14 @@
                 android:elevation="3dp"
                 android:outlineAmbientShadowColor="#BEBABA"
                 android:outlineSpotShadowColor="#BEBABA"
-                android:src="@drawable/ftney"
+                android:src="@drawable/geralt"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guideline17"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/guideline16" />
 
             <TextView
-                android:id="@+id/textView_card_username"
+                android:id="@+id/txtNomesFeed"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -109,25 +109,25 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:text="Matt LeBlanc"
+                android:text="Nome Teste"
                 android:textColor="#212121"
                 android:textSize="18dp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline18"
                 app:layout_constraintStart_toStartOf="@+id/guideline17"
-                app:layout_constraintTop_toBottomOf="@+id/iv_card_post" />
+                app:layout_constraintTop_toBottomOf="@+id/txtDescricaoFeed" />
 
             <TextView
-                android:id="@+id/textView_card_time"
+                android:id="@+id/txtMaterias2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
-                android:text="32m ago"
+                android:text="Cálculo"
                 android:textSize="16dp"
                 android:textColor="#BEBABA"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/textView_card_username"
-                app:layout_constraintStart_toStartOf="@+id/textView_card_username"
-                app:layout_constraintTop_toBottomOf="@+id/textView_card_username" />
+                app:layout_constraintEnd_toEndOf="@+id/txtNomesFeed"
+                app:layout_constraintStart_toStartOf="@+id/txtNomesFeed"
+                app:layout_constraintTop_toBottomOf="@+id/txtNomesFeed" />
 
             <ImageView
                 android:id="@+id/imageView2"
@@ -141,7 +141,7 @@
                 android:layout_marginBottom="24dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView_card_time"
+                app:layout_constraintStart_toEndOf="@+id/txtMaterias2"
                 app:layout_constraintTop_toTopOf="@+id/guideline16"
                 app:srcCompat="@drawable/dots" />
 
