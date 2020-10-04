@@ -15,11 +15,18 @@
         android:gravity="center_horizontal"
         android:background="@color/colorPrimary">
 
+        <Button
+            android:id="@+id/btnHabilidades"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="180dp"
+            android:background="@drawable/ic_habilidades" />
+
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imgUsuarioPerfil"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginTop="30dp"
             android:src="@drawable/geralt"/>
 
         <EditText
@@ -41,16 +48,7 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnHabilidades"
-        android:layout_width="224dp"
-        android:layout_height="30dp"
-        android:layout_marginBottom="1.0dp"
-        android:background="@color/colorWhite"
-        android:text="Habilidades"
-        android:textAllCaps="false"
-        android:textSize="14sp"
-        android:visibility="visible" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -183,7 +181,7 @@
                 android:padding="4dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="10dp"
-                android:src="@drawable/ic_curso"/>
+                android:src="@drawable/ic_cursos"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -243,18 +241,20 @@
 
         </LinearLayout>
 
+
         <Button
             android:id="@+id/btnSalvarPerfil"
-            android:layout_width="360dp"
+            android:layout_width="match_parent"
             android:layout_height="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="50dp"
-            android:layout_marginRight="20dp"
             android:layout_marginBottom="1.0dp"
-            android:background="@color/colorWhite"
+            android:background="@drawable/botao_branco"
+            android:text="Salvar"
             android:textAllCaps="false"
-            android:textSize="14sp"
-            tools:text="Salvar" />
+            android:textSize="14sp" />
 
     </LinearLayout>
 

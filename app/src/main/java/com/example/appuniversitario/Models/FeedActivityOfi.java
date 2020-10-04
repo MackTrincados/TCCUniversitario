@@ -20,12 +20,15 @@ import com.example.appuniversitario.PerfilActivity;
 import com.example.appuniversitario.PerfilActivity2;
 import com.example.appuniversitario.R;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class FeedActivityOfi extends AppCompatActivity {
     String s1[], s2[],s3[];
     int Images[] = {R.drawable.download,R.drawable.download2,R.drawable.download3,R.drawable.download4,R.drawable.download5};
     //ImageView imageViewFeed ;
     TextView txtNomesFeed;
     private Button btnEntrarPerfil, btnBuscar, btnNotificacoes;
+    private CircleImageView btnFotoFeed;
 
 
     RecyclerView recyclerView;
@@ -42,25 +45,35 @@ public class FeedActivityOfi extends AppCompatActivity {
         recyclerView.setAdapter(feedAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         //imageViewFeed = (ImageView) findViewById(R.id.imageViewFeed);
-        btnBuscar = (Button) findViewById(R.id.btnAtualizarFeed);
+        //btnBuscar = (Button) findViewById(R.id.btnAtualizarFeed);
         txtNomesFeed = (TextView) findViewById(R.id.txtNomesFeed);
-        btnEntrarPerfil = (Button) findViewById(R.id.btnEntrarPerfilFeeds);
+        //btnEntrarPerfil = (Button) findViewById(R.id.btnEntrarPerfilFeeds);
         btnNotificacoes = (Button) findViewById(R.id.btnNotificacoesFeed);
+        btnFotoFeed = (CircleImageView) findViewById(R.id.home_profile_image);
 
-        Spinner staticSpinner = (Spinner) findViewById(R.id.spinnerFeed);
+        /*Spinner staticSpinner = (Spinner) findViewById(R.id.spinnerFeed);
         ArrayAdapter<CharSequence> staticAdapter = ArrayAdapter
                 .createFromResource(this, R.array.skill_array,
                         android.R.layout.simple_spinner_item);
         staticAdapter
                 .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        staticSpinner.setAdapter(staticAdapter);
+        staticSpinner.setAdapter(staticAdapter); */
 
-        btnEntrarPerfil.setOnClickListener(new View.OnClickListener() {
+       /* btnEntrarPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), PerfilActivity.class));
             }
         });
+
+        */
+        btnFotoFeed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), PerfilActivity.class));
+            }
+        });
+
         recyclerView.setOnClickListener(new View.OnClickListener() {
             @Override
            public void onClick(View view) {
@@ -73,6 +86,9 @@ public class FeedActivityOfi extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), PerfilActivity2.class));
             }
         });
+
+
+
         //txtNomesFeed.setOnClickListener(new View.OnClickListener() {
         //    @Override
        //     public void onClick(View view) {

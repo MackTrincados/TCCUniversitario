@@ -18,6 +18,7 @@ public class Solicitacoes extends AppCompatActivity {
     private EditText  txtDetalhesEncontro;
     private Spinner dropdown3;
     private Button btnEnviarSolicitacoes;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,13 +26,13 @@ public class Solicitacoes extends AppCompatActivity {
         txtDetalhesEncontro = (EditText) findViewById(R.id.txtDetalhesSolicitacao);
         btnEnviarSolicitacoes = (Button) findViewById(R.id.btnEnviarSolicitacoes);
 
-        Spinner staticSpinner = (Spinner) findViewById(R.id.spinnerSolicitacoes);
+        /*Spinner staticSpinner = (Spinner) findViewById(R.id.spinnerSolicitacoes);
         ArrayAdapter<CharSequence> staticAdapter = ArrayAdapter
                 .createFromResource(this, R.array.skill_array,
                         android.R.layout.simple_spinner_item);
         staticAdapter
                 .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        staticSpinner.setAdapter(staticAdapter);
+        staticSpinner.setAdapter(staticAdapter); */
 
         btnEnviarSolicitacoes.setOnClickListener(new View.OnClickListener() {
                 @Override
