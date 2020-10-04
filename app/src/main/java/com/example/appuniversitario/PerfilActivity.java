@@ -8,25 +8,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.appuniversitario.Models.FeedActivityOfi;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-
-import java.security.PublicKey;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
 
 public class PerfilActivity extends AppCompatActivity {
 
@@ -56,11 +47,11 @@ public class PerfilActivity extends AppCompatActivity {
         int c = 1;
        EventoDataBase();
 
-        txtNome = (EditText) findViewById(R.id.txtNomeUsuarioPerfil);
+        txtNome = (EditText) findViewById(R.id.txtNomeUsuPer);
         txtSobre = (EditText) findViewById(R.id.txtSobreMimPerfil);
         txtEmail = (EditText) findViewById(R.id.txtEmailPerfil);
         txtCelular = (EditText) findViewById(R.id.txtCelularPerfil);
-        txtSexo = (EditText) findViewById(R.id.txtSexoPerfil);
+        //txtSexo = (EditText) findViewById(R.id.txtSexoPerfil);
         txtCurso = (EditText) findViewById(R.id.txtCursoPerfil);
         txtSemestre = (EditText) findViewById(R.id.txtSemestrePerfil);
         btnSalvarPerfil = (Button) findViewById(R.id.btnSalvarPerfil);
@@ -93,7 +84,7 @@ public class PerfilActivity extends AppCompatActivity {
         btnHabilidades.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), FeedActivityOfi.class));
+                startActivity(new Intent(getApplicationContext(), HabilidadesActivity.class));
             }
         });
 

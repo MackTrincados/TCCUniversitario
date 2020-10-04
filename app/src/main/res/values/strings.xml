@@ -2,11 +2,15 @@
 <resources>
     <string name="app_name">App Universitario</string>
     <string-array name="skill_array">
-        <item>Java</item>
-        <item>Python</item>
-        <item>C#</item>
-        <item>Aws</item>
-        <item>Cloud Computing</item>
+        <item>Introdução a Sistemas Operacionais</item>
+        <item>Computação</item>
+        <item>Gestão de Empresas</item>
+        <item>Etica 01</item>
+        <item>Economia</item>
+        <item>Computação em Nuvem</item>
+        <item>Calculo 01</item>
+        <item>Calculo 02</item>
+        <item>Programação</item>
     </string-array>
 
     <string-array name="alunos">
@@ -18,18 +22,35 @@
     </string-array>
 
     <string-array name="descricao">
-        <item></item>
-        <item>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</item>
-        <item>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</item>
-        <item>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</item>
-        <item>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</item>
+        <item>"    Matérias com facilidade:
+            Cálculo 01,
+            Cálculo 02,
+            Cálculo 03
+
+            As terças e quintas estou disponível para marcar aulas e reuniões"</item>
+        <item>"Matérias com facilidade:
+            Cálculo 01,
+            Cálculo 02,
+            Cálculo 03"</item>
+        <item>"Matérias com facilidade:
+            Cálculo 01,
+            Cálculo 02,
+            Cálculo 03"</item>
+        <item>"Matérias com facilidade:
+            Cálculo 01,
+            Cálculo 02,
+            Cálculo 03"</item>
+        <item> "Matérias com facilidade:
+            Cálculo 01,
+            Cálculo 02,
+            Cálculo 03"</item>
     </string-array>
     <string-array name="Materias2">
-        <item>Calculo </item>
-        <item>Calculo 2</item>
-        <item>Calculo 3</item>
-        <item>Calculo 4</item>
-        <item>Calculo 5</item>
+        <item>Administração </item>
+        <item>Engenharia Mecânica</item>
+        <item>Engenharia da Computação</item>
+        <item>Ciência da Computação</item>
+        <item>Sistemas de Informação</item>
     </string-array>
 </resources>
 

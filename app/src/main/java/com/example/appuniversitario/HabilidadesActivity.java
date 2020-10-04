@@ -3,14 +3,17 @@ package com.example.appuniversitario;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.appuniversitario.Models.FeedActivityOfi;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,6 +35,7 @@ public class HabilidadesActivity extends AppCompatActivity {
 
     private Spinner dropdown3;
 
+    private Button btnEntrarFeed, btnSalvarHabilidade;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +44,9 @@ public class HabilidadesActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference();
+        btnEntrarFeed = (Button) findViewById(R.id.btnEntrarFeed1);
+        btnSalvarHabilidade = (Button) findViewById(R.id.btnSalvarHabilidades1);
+
         //Tipo 1
 
         Spinner staticSpinner = (Spinner) findViewById(R.id.spinner1);
@@ -49,6 +56,26 @@ public class HabilidadesActivity extends AppCompatActivity {
         staticAdapter
                 .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         staticSpinner.setAdapter(staticAdapter);
+        //segundo
+
+        Spinner staticSpinner2 = (Spinner) findViewById(R.id.spinner2);
+        ArrayAdapter<CharSequence> staticAdapter2 = ArrayAdapter
+                .createFromResource(this, R.array.skill_array,
+                        android.R.layout.simple_spinner_item);
+        staticAdapter2
+                .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        staticSpinner2.setAdapter(staticAdapter2);
+
+        // terceiro
+
+        Spinner staticSpinner3 = (Spinner) findViewById(R.id.spinner3);
+        ArrayAdapter<CharSequence> staticAdapter3 = ArrayAdapter
+                .createFromResource(this, R.array.skill_array,
+                        android.R.layout.simple_spinner_item);
+        staticAdapter3
+                .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        staticSpinner3.setAdapter(staticAdapter3);
+
 
 
 
@@ -61,26 +88,26 @@ public class HabilidadesActivity extends AppCompatActivity {
 
 //Dar uma olhada !!
 
-        dropdown3 = (Spinner) findViewById(R.id.spinner3);
-        ArrayAdapter<Habilidades> adapter3 = new ArrayAdapter<Habilidades>
-                 (this, android.R.layout.simple_spinner_item, lstHabilidade);
-       adapter3.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        //dropdown3 = (Spinner) findViewById(R.id.spinner3);
+        //ArrayAdapter<Habilidades> adapter3 = new ArrayAdapter<Habilidades>
+       //          (this, android.R.layout.simple_spinner_item, lstHabilidade);
+      // adapter3.setDropDownViewResource(android.R.layout.simple_spinner_item);
 //set the spinners adapter to the previously created one.
-        dropdown3.setAdapter(adapter3);
+       // dropdown3.setAdapter(adapter3);
 
 
-        dropdown3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                Habilidades habilidades = (Habilidades) adapterView.getSelectedItem();
-                String ae = habilidades.descricao;
-            }
+       // dropdown3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        //    @Override
+       //    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        //        Habilidades habilidades = (Habilidades) adapterView.getSelectedItem();
+        //        String ae = habilidades.descricao;
+        //    }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+        //    @Override
+        //    public void onNothingSelected(AdapterView<?> adapterView) {
 
-            }
-        });
+        //    }
+        //});
 
 
 
@@ -90,27 +117,27 @@ public class HabilidadesActivity extends AppCompatActivity {
         //Tipo 2
 
 
-        Spinner dynamicSpinner = (Spinner) findViewById(R.id.spinner2);
+        //Spinner dynamicSpinner = (Spinner) findViewById(R.id.spinner2);
 
-        String[] items = new String[] { "HTML", "CSS", "JavaScript" };
+        //String[] items = new String[] { "HTML", "CSS", "JavaScript" };
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, items);
-        dynamicSpinner.setAdapter(adapter);
+       // ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+          //      android.R.layout.simple_spinner_item, items);
+        //dynamicSpinner.setAdapter(adapter);
 
 
-        dynamicSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view,
-                                       int position, long id) {
-                Log.v("item", (String) parent.getItemAtPosition(position));
-            }
+        //dynamicSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+         //   @Override
+         ///   public void onItemSelected(AdapterView<?> parent, View view,
+         //                              int position, long id) {
+         //       Log.v("item", (String) parent.getItemAtPosition(position));
+          //  }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                // TODO Auto-generated method stub
-            }
-        });
+         //   @Override
+         //   public void onNothingSelected(AdapterView<?> parent) {
+         //       // TODO Auto-generated method stub
+         //   }
+      //  });
 
        // AdicionarHabilidades();
         CarregarHabilidades();
@@ -172,8 +199,22 @@ public class HabilidadesActivity extends AppCompatActivity {
             }
         });
 
+        btnEntrarFeed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), FeedActivityOfi.class));
+            }
+        });
+
+        btnSalvarHabilidade.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(HabilidadesActivity.this, "Habilidades Salvas!", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
+
     public void getSelectedUser(View v)
     {
         Habilidades habilidades = (Habilidades) dropdown3.getSelectedItem();

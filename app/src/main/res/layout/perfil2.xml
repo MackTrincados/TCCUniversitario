@@ -23,16 +23,17 @@
             android:src="@drawable/geralt"/>
 
         <EditText
-            android:id="@+id/txtNomeUsuPer"
+            android:id="@+id/txtNomeUsuPer2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:editable="false"
             android:fontFamily="sans-serif-light"
-            android:text="Geralt de Rívia"
+            android:text="Paulo Henrique Guedes"
             android:textSize="25sp" />
 
         <EditText
-            android:id="@+id/nomeUniversidade"
+            android:id="@+id/nomeUniversidade2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Universidade Presbiteriana Mackenzie"
@@ -40,17 +41,6 @@
             android:textSize="14sp"/>
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btnHabilidades"
-        android:layout_width="224dp"
-        android:layout_height="30dp"
-        android:layout_marginBottom="1.0dp"
-        android:background="@color/colorWhite"
-        android:text="Habilidades"
-        android:textAllCaps="false"
-        android:textSize="14sp"
-        android:visibility="visible" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -60,6 +50,16 @@
         android:paddingEnd="16dp"
         android:layout_marginTop="20dp"
         android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnSolicitarEncontroPerfil"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginBottom="1.0dp"
+            android:background="@color/colorWhite"
+            android:text="Solicitar Encontro"
+            android:textAllCaps="false"
+            android:textSize="14sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -87,11 +87,12 @@
                     android:textSize="13sp" />
 
                 <EditText
-                    android:id="@+id/txtSobreMimPerfil"
+                    android:id="@+id/txtSobreMimPerfil2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Texto sobre mim"
-                    android:textSize="15sp"/>
+                    android:editable="false"
+                    android:text="Bom conhecimento em programação"
+                    android:textSize="15sp" />
 
             </LinearLayout>
 
@@ -125,11 +126,12 @@
                     android:text="Email"/>
 
                 <EditText
-                    android:id="@+id/txtEmailPerfil"
+                    android:id="@+id/txtEmailPerfil2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="alunomack@mackenzista.com.br"
-                    android:textSize="15sp"/>
+                    android:editable="false"
+                    android:text="paulo@mackenzista.com.br"
+                    android:textSize="15sp" />
 
             </LinearLayout>
 
@@ -161,11 +163,12 @@
                     android:text="Celular" />
 
                 <EditText
-                    android:id="@+id/txtCelularPerfil"
+                    android:id="@+id/txtCelularPerfil2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="(11) 97070-7070"
-                    android:textSize="15sp"/>
+                    android:editable="false"
+                    android:text="(11) 99999-7777"
+                    android:textSize="15sp" />
 
             </LinearLayout>
 
@@ -197,11 +200,12 @@
                     android:text="Curso"/>
 
                 <EditText
-                    android:id="@+id/txtCursoPerfil"
+                    android:id="@+id/txtCursoPerfil2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:editable="false"
                     android:text="Sistemas de informação"
-                    android:textSize="15sp"/>
+                    android:textSize="15sp" />
 
             </LinearLayout>
 
@@ -233,28 +237,16 @@
                     android:text="Semestre"/>
 
                 <EditText
-                    android:id="@+id/txtSemestrePerfil"
+                    android:id="@+id/txtSemestrePerfil2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:editable="false"
                     android:text="Oitavo"
-                    android:textSize="15sp"/>
+                    android:textSize="15sp" />
 
             </LinearLayout>
 
         </LinearLayout>
-
-        <Button
-            android:id="@+id/btnSalvarPerfil"
-            android:layout_width="360dp"
-            android:layout_height="30dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="50dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="1.0dp"
-            android:background="@color/colorWhite"
-            android:textAllCaps="false"
-            android:textSize="14sp"
-            tools:text="Salvar" />
 
     </LinearLayout>
 
