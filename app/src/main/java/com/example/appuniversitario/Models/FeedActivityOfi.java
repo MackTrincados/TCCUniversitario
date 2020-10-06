@@ -74,12 +74,15 @@ public class FeedActivityOfi extends AppCompatActivity {
             }
         });
 
-        recyclerView.setOnClickListener(new View.OnClickListener() {
-            @Override
-           public void onClick(View view) {
+        recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(this, recyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
+            @Override public void onItemClick(View view, int position) {
                 startActivity(new Intent(getApplicationContext(), PerfilActivity2.class));
             }
-        });
+
+            @Override public void onLongItemClick(View view, int position) {
+                // do whatever
+            }
+        }));
         btnNotificacoes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
