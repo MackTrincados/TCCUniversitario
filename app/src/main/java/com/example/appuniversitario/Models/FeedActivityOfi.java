@@ -24,7 +24,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class FeedActivityOfi extends AppCompatActivity {
     String s1[], s2[],s3[];
-    int Images[] = {R.drawable.download,R.drawable.download2,R.drawable.download3,R.drawable.download4,R.drawable.download5};
+    int Images[] = {R.drawable.victor,R.drawable.paulo,R.drawable.leo,R.drawable.xandao,R.drawable.mothers};
     //ImageView imageViewFeed ;
     TextView txtNomesFeed;
     private Button btnEntrarPerfil, btnBuscar, btnNotificacoes;

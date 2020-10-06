@@ -27,7 +27,7 @@
             android:id="@+id/imgUsuarioPerfil"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/geralt"/>
+            android:src="@drawable/leo"/>
 
         <EditText
             android:id="@+id/txtNomeUsuPer2"
@@ -36,7 +36,7 @@
             android:layout_marginTop="10dp"
             android:editable="false"
             android:fontFamily="sans-serif-light"
-            android:text="Paulo Henrique Guedes"
+            android:text="Leonardo Baier"
             android:textSize="25sp" />
 
         <EditText
@@ -127,7 +127,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:editable="false"
-                    android:text="paulo@mackenzista.com.br"
+                    android:text="leobaier@mackenzista.com.br"
                     android:textSize="15sp" />
 
             </LinearLayout>
@@ -238,7 +238,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:editable="false"
-                    android:text="Oitavo"
+                    android:text="Sétimo"
                     android:textSize="15sp" />
 
             </LinearLayout>

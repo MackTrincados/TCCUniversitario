@@ -27,7 +27,7 @@
             android:id="@+id/imgUsuarioPerfil"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/geralt"/>
+            android:src="@drawable/marcos"/>
 
         <EditText
             android:id="@+id/txtNomeUsuPer"
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="sans-serif-light"
-            android:text="Geralt de Rívia"
+            android:text="Marcos Augusto"
             android:textSize="25sp" />
 
         <EditText
@@ -88,7 +88,7 @@
                     android:id="@+id/txtSobreMimPerfil"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Texto sobre mim"
+                    android:text="Habilidade em Java"
                     android:textSize="15sp"/>
 
             </LinearLayout>
@@ -242,7 +242,7 @@
         </LinearLayout>
 
 
-        <Button
+       <!-- <Button
             android:id="@+id/btnSalvarPerfil"
             android:layout_width="match_parent"
             android:layout_height="30dp"
@@ -254,7 +254,7 @@
             android:background="@drawable/botao_branco"
             android:text="Salvar"
             android:textAllCaps="false"
-            android:textSize="14sp" />
+            android:textSize="14sp" /> -->
 
     </LinearLayout>
 

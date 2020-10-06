@@ -54,11 +54,11 @@ public class PerfilActivity extends AppCompatActivity {
         //txtSexo = (EditText) findViewById(R.id.txtSexoPerfil);
         txtCurso = (EditText) findViewById(R.id.txtCursoPerfil);
         txtSemestre = (EditText) findViewById(R.id.txtSemestrePerfil);
-        btnSalvarPerfil = (Button) findViewById(R.id.btnSalvarPerfil);
+        //btnSalvarPerfil = (Button) findViewById(R.id.btnSalvarPerfil);
         btnHabilidades = (Button) findViewById(R.id.btnHabilidades);
-        btnSalvarPerfil.setOnClickListener(new View.OnClickListener() {
+        //btnSalvarPerfil.setOnClickListener(new View.OnClickListener() {
 
-            @Override
+            /*@Override
             public void onClick(View view) {
 
                 Usuarios usuariosTeste = new Usuarios();
@@ -80,6 +80,8 @@ public class PerfilActivity extends AppCompatActivity {
                 databaseReference.child("Usuarios").child("teste").setValue(usu);
             }
         });
+
+             */
 
         btnHabilidades.setOnClickListener(new View.OnClickListener() {
             @Override

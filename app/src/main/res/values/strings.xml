@@ -14,42 +14,55 @@
     </string-array>
 
     <string-array name="alunos">
-        <item>Marcos Augusto</item>
-        <item>Paulo Guedes</item>
         <item>Victor Apolinario</item>
+        <item>Paulo Guedes</item>
         <item>Leonardo Baier</item>
-        <item>Leitinho da mamãe</item>
+        <item>Douglas Alexandre</item>
+        <item>Alexandre Douglas</item>
     </string-array>
 
     <string-array name="descricao">
         <item>"    Matérias com facilidade:
             Cálculo 01,
-            Cálculo 02,
-            Cálculo 03
+            Estrutura de Dados,
+            Banco de Dados
 
-            As terças e quintas estou disponível para marcar aulas e reuniões"</item>
-        <item>"Matérias com facilidade:
-            Cálculo 01,
+            As Terças e Quintas estou disponível para marcar aulas e reuniões"</item>
+
+        <item>"    Matérias com facilidade:
             Cálculo 02,
-            Cálculo 03"</item>
-        <item>"Matérias com facilidade:
+            Lógica de Programação,
+            Banco de Dados
+
+            Disponibilidade para aulas e encontros somente as Sextas"</item>
+
+        <item>"    Matérias com facilidade:
+            IAP,
+            Ciência de Dados,
+            Modelagem de Dados
+
+            Disponibilidade as Quartas"</item>
+
+        <item>"    Matérias com facilidade:
+            Ética e Cidadania,
+            Inglês Técnico 2,
+            Matemática Discreta
+
+            Disponibilidade para Reuniões Presenciais as Segundas"</item>
+
+        <item>"    Matérias com facilidade:
             Cálculo 01,
-            Cálculo 02,
-            Cálculo 03"</item>
-        <item>"Matérias com facilidade:
-            Cálculo 01,
-            Cálculo 02,
-            Cálculo 03"</item>
-        <item>"Matérias com facilidade:
-            Cálculo 01,
-            Cálculo 02,
-            Cálculo 03"</item>
+            Estrutura de Dados,
+            Banco de Dados
+
+            Tenho disponibilidade para ajudar somente nas Quartas"</item>
+
     </string-array>
     <string-array name="Materias2">
-        <item>Administração </item>
-        <item>Engenharia Mecânica</item>
+        <item>Sistemas de Informação</item>
+        <item>Ciências da Computação</item>
         <item>Engenharia da Computação</item>
-        <item>Ciência da Computação</item>
+        <item>Ciências da Computação</item>
         <item>Sistemas de Informação</item>
     </string-array>
 </resources>
