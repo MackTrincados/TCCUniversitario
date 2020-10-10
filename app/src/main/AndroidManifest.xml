@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Solicitacoes"></activity>
+        <activity android:name=".Solicitacoes" />
         <activity android:name=".Models.FeedActivityOfi" />
         <activity android:name=".Models.StoryItem" />
         <activity android:name=".Models.PostItem" />

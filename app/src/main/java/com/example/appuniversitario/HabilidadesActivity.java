@@ -35,16 +35,15 @@ public class HabilidadesActivity extends AppCompatActivity {
 
     private Spinner dropdown3;
 
-    private Button btnEntrarFeed, btnSalvarHabilidade;
+    private Button btnSalvarHabilidade;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.habilidades);
+        setContentView(R.layout.habilidades_new);
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference();
-        btnEntrarFeed = (Button) findViewById(R.id.btnEntrarFeed1);
         btnSalvarHabilidade = (Button) findViewById(R.id.btnSalvarHabilidades1);
 
         //Tipo 1
@@ -75,6 +74,26 @@ public class HabilidadesActivity extends AppCompatActivity {
         staticAdapter3
                 .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         staticSpinner3.setAdapter(staticAdapter3);
+
+        //quarto
+
+        Spinner staticSpinner4 = (Spinner) findViewById(R.id.spinner4);
+        ArrayAdapter<CharSequence> staticAdapter4 = ArrayAdapter
+                .createFromResource(this, R.array.skill_array,
+                        android.R.layout.simple_spinner_item);
+        staticAdapter4
+                .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        staticSpinner4.setAdapter(staticAdapter4);
+
+        // quinto
+
+        Spinner staticSpinner5 = (Spinner) findViewById(R.id.spinner5);
+        ArrayAdapter<CharSequence> staticAdapter5 = ArrayAdapter
+                .createFromResource(this, R.array.skill_array,
+                        android.R.layout.simple_spinner_item);
+        staticAdapter5
+                .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        staticSpinner5.setAdapter(staticAdapter5);
 
 
 
@@ -199,17 +218,11 @@ public class HabilidadesActivity extends AppCompatActivity {
             }
         });
 
-        btnEntrarFeed.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), FeedActivityOfi.class));
-            }
-        });
-
         btnSalvarHabilidade.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(HabilidadesActivity.this, "Habilidades Salvas!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), FeedActivityOfi.class));
             }
         });
 

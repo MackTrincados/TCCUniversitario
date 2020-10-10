@@ -57,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
         btnEsqueceuSenha = (Button) findViewById(R.id.btnEsqSenha);
         txtEmail = (EditText) findViewById(R.id.txtEmail);
         txtSenha = (EditText) findViewById(R.id.txtSenha);
-       // this.txtSenha.setText("senha123");
-       // this.txtEmail.setText("teste@email.com");
+        this.txtSenha.setText("senha123");
+        this.txtEmail.setText("teste@email.com");
 
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
