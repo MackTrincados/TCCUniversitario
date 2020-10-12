@@ -27,7 +27,7 @@
             android:id="@+id/imgUsuarioPerfil"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/leo"/>
+            android:src="@drawable/fotoperfil"/>
 
         <EditText
             android:id="@+id/txtNomeUsuPer2"

@@ -47,9 +47,9 @@ public class MainActivity extends AppCompatActivity {
         //Usuarios usuariosTeste = new Usuarios();
         //usuariosTeste.idUsuarios = UUID.randomUUID().toString();
         //usuariosTeste.nome = "Neymar";
-       // usuariosTeste.email = "adultoney@gmail.com";
+        // usuariosTeste.email = "adultoney@gmail.com";
         //usuariosTeste.senha = "neyzika123";
-       // databaseReference.child("Usuarios").child(usuariosTeste.idUsuarios).setValue(usuariosTeste);
+        // databaseReference.child("Usuarios").child(usuariosTeste.idUsuarios).setValue(usuariosTeste);
 
         //Button banCadastroMain = (Button) findViewById(R.id.btnCadastro);
         btnEntrar = (Button) findViewById(R.id.btnEntrar);
@@ -82,25 +82,25 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 //Autenticação do usuário
-        try {
-    firebaseAuth.signInWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-        @Override
-        public void onComplete(@NonNull Task<AuthResult> task) {
-            if (task.isSuccessful()) {
-                Toast.makeText(MainActivity.this, "Login realizado com sucesso!", Toast.LENGTH_SHORT).show();
-                FirebaseUser user = firebaseAuth.getCurrentUser();
+                try {
+                    firebaseAuth.signInWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(MainActivity.this, "Login realizado com sucesso!", Toast.LENGTH_SHORT).show();
+                                FirebaseUser user = firebaseAuth.getCurrentUser();
 
-                startActivity(new Intent(getApplicationContext(), PerfilActivity.class));
-            } else {
-                Toast.makeText(MainActivity.this, "Erro!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        }
-    });
-        }
-        catch (Exception ex)
-            {
-                String a = ex.toString();
-            }
+                                startActivity(new Intent(getApplicationContext(), PerfilActivity.class));
+                            } else {
+                                Toast.makeText(MainActivity.this, "Erro!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                }
+                catch (Exception ex)
+                {
+                    String a = ex.toString();
+                }
             }
 
         });
@@ -112,7 +112,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),PerfilActivity.class));
             }
         });
-
          */
 
         btnCadastro.setOnClickListener(new View.OnClickListener() {
@@ -183,13 +182,11 @@ public class MainActivity extends AppCompatActivity {
                 {
                     String ce = ex.toString();
                 }
-
             }
         });
         btnEqueceuSenha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 try {
                     Intent telaEsqueceuSenha = new Intent(MainActivity.this, EsqueceuSenhaActivity.class);
                     startActivity(telaEsqueceuSenha);
@@ -198,7 +195,6 @@ public class MainActivity extends AppCompatActivity {
                 {
                     String ce = ex.toString();
                 }
-
             }
         }); */
     }
