@@ -13,11 +13,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Solicitacoes" />
         <activity android:name=".Models.FeedActivityOfi" />
-        <activity android:name=".Models.StoryItem" />
-        <activity android:name=".Models.PostItem" />
-        <activity android:name=".Adapters.StoryAdapter" />
-        <activity android:name=".Adapters.PostAdapter" />
-        <activity android:name=".FeedActivity" />
+        <activity android:name=".NotificacoesActivity" />
         <activity android:name=".BuscaActivity" />
         <activity android:name=".HabilidadesActivity" />
         <activity android:name=".Splash">
